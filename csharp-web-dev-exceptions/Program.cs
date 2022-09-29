@@ -67,13 +67,13 @@ namespace Exercises_Exceptions.csharp_web_dev_exceptions
             students.Add("John", "Temp");
             students.Add("Kelly","");
 
-            foreach(var student in students)
+            foreach (KeyValuePair<string, string> student in students)
             {
                 
                 try
                 {
                     CheckFileExtension(student.Value);
-                    Console.WriteLine(CheckFileExtension(student.Value));
+                    Console.WriteLine($"{student.Key}: {CheckFileExtension(student.Value)}");
                 }
                 catch (ArgumentNullException e)
                 {
